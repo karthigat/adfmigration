@@ -1,0 +1,44 @@
+{
+	"name": "PL_SP_TO_SQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[spdemo].[InsertCustomer]",
+					"storedProcedureParameters": {
+						"CustomerID": {
+							"value": "1002",
+							"type": "Int32"
+						},
+						"FirstName": {
+							"value": "Dave",
+							"type": "String"
+						},
+						"LastName": {
+							"value": "Mitch",
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "SqlServer1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-11-05T07:25:08Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
